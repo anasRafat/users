@@ -1,0 +1,16 @@
+<div *ngIf="user" class="container py-5 row">
+  <div class="row justify-content-center align-items-center col-10">
+    <div
+      class="col-4 d-flex flex-column justify-content-center align-items-center"
+    >
+      <h1>Number :{{ user?.id }}</h1>
+      <h3>Name : {{ user?.first_name }} {{ user?.last_name }}</h3>
+      <h6>Email : {{ user?.email }}</h6>
+    </div>
+    <div class="col-4"><img src="{{ user?.avatar }}" /></div>
+  </div>
+  <div class="col-2">
+    <button class="btn" (click)="goBack()">Back</button>
+  </div>
+</div>
+<app-spinner *ngIf="!user"></app-spinner>
